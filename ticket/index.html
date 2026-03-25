@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ticket</title>
+</head>
+<body>
+
+  <div id="ticket">
+
+    <div id="foto">
+      <img src="https://i.pinimg.com/736x/02/0b/4b/020b4b456efa906d56da840380347540.jpg" alt="Artista del concierto" class="imagen-artista" />
+    </div>
+
+    <div id="info">
+      <div id="subtitulo">Presentación Nuevo Álbum</div>
+      <div id="titulo">Concierto<br>de Morat</div>
+      <div id="datos">
+        <div class="dato">Sábado 05 de Junio</div>
+        <div class="linea-vertical"></div>
+        <div class="dato">8:00 PM</div>
+      </div>
+      <div id="lugar">Estadio El Campín</div>
+    </div>
+
+    <div id="stub">
+      <div id="stub-datos">
+        <div class="stub-item">
+          <span class="stub-label">Fila</span>
+          <span class="stub-valor">01</span>
+        </div>
+        <div class="stub-item">
+          <span class="stub-label">Asiento</span>
+          <span class="stub-valor">02</span>
+        </div>
+        <div class="stub-item">
+          <span class="stub-label">Entrada</span>
+          <span class="stub-valor">03</span>
+        </div>
+      </div>
+
+      <div id="barcode">
+        <span style="height:40px"></span>
+        <span style="height:28px"></span>
+        <span style="height:40px"></span>
+        <span style="height:20px"></span>
+        <span style="height:35px"></span>
+        <span style="height:40px"></span>
+        <span style="height:15px"></span>
+        <span style="height:40px"></span>
+        <span style="height:25px"></span>
+        <span style="height:40px"></span>
+        <span style="height:30px"></span>
+        <span style="height:40px"></span>
+        <span style="height:18px"></span>
+        <span style="height:40px"></span>
+        <span style="height:22px"></span>
+        <span style="height:40px"></span>
+        <span style="height:33px"></span>
+        <span style="height:40px"></span>
+      </div>
+
+      <div id="numero">Nº 100316</div>
+    </div>
+
+  </div>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f0e6f6;
+      font-family: Arial;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #ticket {
+      background-color: #ffffff;
+      border: 2px solid #472424;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 820px;
+      max-width: 98vw;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    #foto {
+      width: 220px;
+      min-width: 220px;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .imagen-artista {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #info {
+      flex: 1;
+      padding: 28px 32px;
+      border-left: 2px solid #472424;
+      border-right: 2px dashed #472424;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    #subtitulo {
+      background-color: #472424;
+      color: white;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-self: flex-start;
+    }
+
+    #titulo {
+      font-size: 72px;
+      font-weight: bold;
+      line-height: 1;
+      color: #472424;
+      letter-spacing: 2px;
+      text-align: left;
+    }
+
+    #datos {
+      border-top: 2px solid #472424;
+      border-bottom: 2px solid #472424;
+      padding: 10px 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .dato {
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #472424;
+      flex: 1;
+      padding: 0 16px;
+      text-align: left;
+    }
+
+    .linea-vertical {
+      width: 2px;
+      background-color: #472424;
+      align-self: stretch;
+    }
+
+    #lugar {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color:#472424;
+      text-align: left;
+    }
+
+    #stub {
+      width: 90px;
+      min-width: 90px;
+      background-color: #fdfdfd;
+      padding: 16px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    #stub-datos {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+
+    .stub-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .stub-label {
+      font-size: 8px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color:#472424;
+      opacity: 0.6;
+    }
+
+    .stub-valor {
+      font-size: 22px;
+      font-weight: bold;
+      color: #472424;
+    }
+
+    #barcode {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 1.5px;
+      padding: 6px 0;
+    }
+
+    #barcode span {
+      display: block;
+      width: 2px;
+      background-color:#472424;
+    }
+
+    #numero {
+      font-size: 7px;
+      color: #472424;
+      letter-spacing: 1px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+  </style>
+
+</body>
+</html>
