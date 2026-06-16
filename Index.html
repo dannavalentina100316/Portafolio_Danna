@@ -1,187 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
-
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factura</title>
-    <link rel="stylesheet" href="Style.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Portafolio de Proyectos</title>
 
+<style>
+:root {
+  --vino: #6f1238;
+  --vino-oscuro: #4b0824;
+  --vino-claro: #9d3f62;
+  --rosa-suave: #fbf1f5;
+  --texto: #3e2630;
+  --blanco: #ffffff;
+  --borde: #ead0db;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--rosa-suave);
+  color: var(--texto);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--vino-oscuro), var(--vino), var(--vino-claro));
+  color: var(--blanco);
+  min-height: 330px;
+  padding: 28px 24px 64px;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 54px;
+}
+
+.nav a {
+  color: var(--blanco);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.hero-content {
+  max-width: 850px;
+  margin: auto;
+}
+
+.tag {
+  font-weight: 700;
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4.4rem);
+  margin-bottom: 18px;
+}
+
+.hero-content p:last-child {
+  font-size: 1.05rem;
+  max-width: 760px;
+  margin: auto;
+}
+
+main {
+  background: var(--blanco);
+}
+
+.intro,
+.projects {
+  padding: 72px 24px;
+  text-align: center;
+}
+
+.intro {
+  max-width: 980px;
+  margin: auto;
+}
+
+.intro h2,
+.projects h2 {
+  color: var(--vino);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 24px;
+}
+
+.intro p {
+  color: #684859;
+  font-size: 1.05rem;
+  margin: 12px auto;
+  max-width: 850px;
+}
+
+.projects {
+  background: var(--rosa-suave);
+  border-top: 1px solid var(--borde);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1120px;
+  margin: 42px auto 0;
+  text-align: left;
+}
+
+.project-card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(75, 8, 36, 0.13);
+}
+
+.project-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 170px;
+  font-size: 4.8rem;
+  font-weight: 700;
+  font-family: Georgia, "Times New Roman", serif;
+  color: rgba(255,255,255,0.35);
+  background: linear-gradient(135deg, var(--vino), var(--vino-claro));
+}
+
+.project-info {
+  padding: 26px 24px 28px;
+}
+
+.project-info h3 {
+  color: var(--vino);
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+}
+
+.project-info p {
+  color: #65475a;
+  margin-bottom: 20px;
+}
+
+.project-info a {
+  display: inline-block;
+  background: var(--vino);
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
+.project-info a:hover {
+  background: var(--vino-oscuro);
+}
+
+.footer {
+  background: var(--vino-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 26px 18px;
+}
+
+.footer p {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@media (max-width: 860px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .hero {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 520px) {
+  .intro,
+  .projects {
+    padding: 54px 18px;
+  }
+
+  .nav {
+    margin-bottom: 42px;
+  }
+
+  .project-number {
+    font-size: 4rem;
+    min-height: 140px;
+  }
+}
+</style>
+
+</head>
 
 <body>
 
+<header class="hero">
+  <nav class="nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#proyectos">Proyectos</a>
+  </nav>
 
-<div class="Factura">
+  <section id="inicio" class="hero-content">
+    <p class="tag">HTML y CSS | Aprendizaje SENA</p>
+    <h1>Mi Portafolio de Proyectos</h1>
+    <p>Un espacio sencillo para mostrar mi avance, mis prácticas y lo que voy construyendo en mi camino como desarrolladora.</p>
+  </section>
+</header>
 
+<main>
 
-    <!-- ENCABEZADO -->
-    <div class="encabezado">
-        <div class="logo-area">
-            <div class="logo-icono">
-                <div class="caja">
-                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="2">
-                        <polygon points="40,20 64,33 40,46 16,33" />
-                        <polyline points="16,33 16,54 40,67 64,54 64,33" />
-                        <polyline points="40,46 40,67" />
-                    </svg>
-                </div>
-            </div>
-            <div>
-                <div class="n">NOMBRE DE LA EMPRESA</div>
-                <div class="eslogan">ESPACIO PARA EL ESLOGAN DE LA MARCA</div>
-               
-            </div>
-            </div>
- 
+<section class="intro">
+  <h2>Bienvenidos a mi portafolio</h2>
+  <p>Soy estudiante de Análisis y Desarrollo de Software, aprendiendo a construir soluciones digitales con dedicación y creatividad.</p>
+  <p>Cada proyecto representa un reto superado, una habilidad nueva y un paso más en mi formación.</p>
+</section>
 
+<section id="proyectos" class="projects">
+  <h2>Mis Proyectos</h2>
 
-     <div class="titulo-factura">FACTURA</div></div>
+  <div class="project-grid">
 
-
-    <!-- INFORMACION -->
-    <div class="info">
-        <div class="notas">
-            <div class="nota-titulo">NOTAS ADICIONALES</div>
-            <div class="texto-nota">
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi perferendis, laborum harum
-                aliquam quisquam sint cupiditate nisi, at temporibus dolor quia adipisci ad aspernatur
-                distinctio recusandae est, iure vero odit?
-            </div>
-        </div>
-
-
-        <div class="cliente">
-            <div class="cliente-label">FACTURA A :</div>
-            <br>
-            <br>
-            <strong>JOHN SMITH</strong>
-            <div>123 Calle Green Lake<br>Ciudad Estado<br>Pais</div>
-        </div>
-
-
-        <div class="fechas">
-            <div class="fecha-bloque">
-                <div class="fecha-label">FECHA DE LA FACTURA</div>
-       
-          <div class="fecha-valor">03.01.2018</div>
-            </div>
-            <div class="fecha-bloque">
-                <div class="fecha-label">FECHA DE VENCIMIENTO</div>
-                <div class="fecha-valor">03.12.2018</div>
-            </div>
-            <div class="fecha-bloque">
-                <div class="fecha-label">FACTURA #</div>
-                <div class="fecha-valor">34756</div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- TABLA -->
-    <div class="tabla-A">
-        <table>
-            <thead>
-                <tr>
-                    <th class="num-fila">#</th>
-                    <th class="desc">DESCRIPCION DEL PRODUCTO</th>
-                    <th class="prec">PRECIO</th>
-                    <th class="cant">CANTIDAD</th>
-                    <th class="total">TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                
-                <tr>
-                    <td class="num-fila">1</td>
-                    <td class="desc">Item 1</td>
-                    <td class="pre">$30.50</td>
-                    <td class="can">3</td>
-                    <td class="totl">$91.50</td>
-                </tr>
-                <tr>
-                    <td class="num-fila">2</td>
-                    <td class="desc">Item 2</td>
-                    <td class="pre">$50.00</td>
-                    <td class="can">1</td>
-                    <td class="totl">$50.00</td>
-                </tr>
-                <tr>
-                    <td class="num-fila">3</td>
-                    <td class="desc">Item 3</td>
-                    <td class="pre">$70.00</td>
-                    <td class="can">5</td>
-                    <td class="totl">$350.00</td>
-                </tr>
-                <tr>
-                    <td class="num-fila">4</td>
-                    <td class="desc">Item 4</td>
-                    <td class="pre">$20.00</td>
-                    <td class="can">2</td>
-                    <td class="totl">$40.00</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-
- 
-
-
-<!--  ULTIMA PARTE -->
-<div class="seccion-final">
-
-  <!-- IZQUIERDA: terminos y metodo de pago -->
-  <div class="terfinal">
-    <div class="terminos">
-      <h3>TERMINOS Y CONDICIONES</h3>
-      <br>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iusto debitis ducimus natus quasi
-      consequatur, aliquam assumenda adipisci repellat.</p>
-    </div>
-
-    <br>
-
-    <div class="metodo-pago1">
-      <h3>MÉTODO DE PAGO</h3>
-      
-      <div class="opciones-pago">
-        <span>Cash/Debit</span>
-        <span>Cheque</span>
-        <span>Credit card</span>
+    <article class="project-card">
+      <div class="project-number">01</div>
+      <div class="project-info">
+        <h3>Hoja de Vida</h3>
+        <p>Diseño y estructura de una hoja de vida digital aplicando etiquetas y estilos básicos de HTML y CSS.</p>
+        <a href="#">Ver proyecto</a>
       </div>
-      <div class="campo-pago">
-        Cardholder's Name: <input type="text" class="input-pago">
+    </article>
+
+    <article class="project-card">
+      <div class="project-number">02</div>
+      <div class="project-info">
+        <h3>Tarjeta de Presentación</h3>
+        <p>Creación de una tarjeta personal para practicar colores, espaciado, bordes y composición visual.</p>
+        <a href="#">Ver proyecto</a>
       </div>
-      <div class="campo-pago">
-        Card #: <input type="text" class="input-pago input-mini">
-        Exp: <input type="text" class="input-pago input-mini">
-        CV: <input type="text" class="input-pago input-mini">
+    </article>
+
+    <article class="project-card">
+      <div class="project-number">03</div>
+      <div class="project-info">
+        <h3>Quién Soy</h3>
+        <p>Página de presentación personal con información organizada sobre mis intereses y mi aprendizaje.</p>
+        <a href="#">Ver proyecto</a>
       </div>
-    </div>
-  </div>
+    </article>
 
-<div class="totalfin">
-  <div class="totales-izq">
-    <p>SUBTOTAL</p>
-    <p>IMPUESTOS</p>
-    <p>ENVIO</p>
-    <p>DESCUENTO</p>
-    <h3>TOTAL</h3>
-  </div>
+    <article class="project-card">
+      <div class="project-number">04</div>
+      <div class="project-info">
+        <h3>Factura</h3>
+        <p>Proyecto para practicar la estructura de una factura con datos organizados, tablas y estilos sencillos.</p>
+        <a href="#">Ver proyecto</a>
+      </div>
+    </article>
 
-  <div class="totales-der">
-    <p>$631.30</p>
-    <p>$53.78</p>
-    <p>$12.00</p>
-    <p>$315.00</p>
-    <h2>$592.28</h2>
+    <article class="project-card">
+      <div class="project-number">05</div>
+      <div class="project-info">
+        <h3>Brief 4</h3>
+        <p>Actividad de práctica donde se aplica organización de contenido, diseño visual y maquetación básica.</p>
+        <a href="#">Ver proyecto</a>
+      </div>
+    </article>
 
-    <div class="firma-area">
-      <div class="firma-linea">FIRMA</div>
-    </div>
+    <article class="project-card">
+      <div class="project-number">06</div>
+      <div class="project-info">
+        <h3>Tienda</h3>
+        <p>Página tipo tienda para mostrar productos, practicar tarjetas, colores y distribución de elementos.</p>
+        <a href="#">Ver proyecto</a>
+      </div>
+    </article>
+
   </div>
-</div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 | Portafolio de Estudiante | SENA</p>
+</footer>
+
+</body>
+</html>
