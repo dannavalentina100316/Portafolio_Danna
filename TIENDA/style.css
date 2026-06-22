@@ -1,0 +1,680 @@
+/* ============================================================= */
+/* RESET BASICO: quitar margenes y padding por defecto           */
+/* ============================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  background-color: #ffffff;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ============================================================= */
+/* HEADER: barra superior oscura                                 */
+/* ============================================================= */
+.header {
+  background-color: #1c1f24;
+  color: #ffffff;
+}
+
+/* Fila superior: buscador + logo + iconos */
+.header-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 30px;
+}
+
+/* Buscador a la izquierda */
+.header-buscador {
+  display: flex;
+  align-items: center;
+  width: 280px;
+}
+
+.header-buscador .lupa {
+  color: #f7a700;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.header-buscador input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #444444;
+  color: #cccccc;
+  font-size: 12px;
+  padding: 4px 0;
+  outline: none;
+}
+
+/* Logo central */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.logo img {
+  width: 22px;
+  height: 22px;
+  margin-right: 4px;
+}
+
+.logo-texto {
+  color: #ffffff;
+}
+
+/* Iconos a la derecha */
+.header-iconos {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: 280px;
+  justify-content: flex-end;
+}
+
+.icono-texto {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #cccccc;
+}
+
+.icono-texto .corazon,
+.icono-texto .bolsa {
+  color: #f7a700;
+  margin-right: 4px;
+}
+
+/* Menu de navegacion principal */
+.nav-principal {
+  border-top: 1px solid #2b2f36;
+}
+
+.nav-principal ul {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 0;
+}
+
+.nav-principal a {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #cccccc;
+}
+
+.nav-principal a.activo {
+  color: #f7a700;
+}
+
+.nav-principal a:hover {
+  color: #f7a700;
+}
+
+/* ============================================================= */
+/* HERO PRINCIPAL: dos bloques de color con camisetas            */
+/* ============================================================= */
+.hero {
+  display: flex;
+}
+
+.hero-bloque {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  min-height: 360px;
+}
+
+/* Mitad izquierda turquesa */
+.hero-izquierda {
+  background-color: #1fc8c0;
+}
+
+/* Mitad derecha azul */
+.hero-derecha {
+  background-color: #1f8fe0;
+}
+
+.hero-img {
+  width: 280px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 18px;
+}
+
+.hero-texto {
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* ============================================================= */
+/* FILA DE MARCAS: logos en linea                                */
+/* ============================================================= */
+.marcas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 26px 30px;
+}
+
+.marcas img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+.marcas img:hover {
+  opacity: 1;
+}
+
+/* ============================================================= */
+/* TARJETAS DE CATEGORIAS: tres tarjetas de colores              */
+/* ============================================================= */
+.categorias {
+  display: flex;
+  gap: 0;
+}
+
+.categoria {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 300px;
+}
+
+/* Colores de fondo de cada tarjeta */
+.categoria-azul {
+  background-color: #0d2747;
+}
+
+.categoria-naranja {
+  background-color: #ff7a45;
+}
+
+.categoria-amarillo {
+  background-color: #f7b500;
+}
+
+.categoria img {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 22px;
+}
+
+/* Boton SHOP NOW de las categorias */
+.btn-shop {
+  background-color: #ffffff;
+  color: #333333;
+  border: none;
+  padding: 10px 26px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-shop:hover {
+  background-color: #1c1f24;
+  color: #ffffff;
+}
+
+/* ============================================================= */
+/* OUR PRODUCTS: titulo, tabs y cuadricula de productos          */
+/* ============================================================= */
+.productos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.productos-titulo {
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #1c1f24;
+  margin-bottom: 14px;
+}
+
+/* Tabs / subtitulos */
+.productos-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.productos-tabs a {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #999999;
+}
+
+.productos-tabs a.tab-activo {
+  color: #f7a700;
+}
+
+.productos-tabs a:hover {
+  color: #f7a700;
+}
+
+/* Cuadricula: 4 columnas x 2 filas */
+.productos-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.producto {
+  width: 25%;
+  padding: 16px;
+  text-align: center;
+}
+
+/* Contenedor de la imagen del producto */
+.producto-img {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.producto-img img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.producto-nombre {
+  font-size: 13px;
+  color: #555555;
+  margin-bottom: 6px;
+}
+
+.producto-precio {
+  font-size: 14px;
+  font-weight: bold;
+  color: #f7a700;
+}
+
+/* Boton central LOAD MORE */
+.productos-boton {
+  margin-top: 30px;
+}
+
+.btn-load {
+  background-color: #1c1f24;
+  color: #ffffff;
+  border: none;
+  padding: 12px 34px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 22px;
+  cursor: pointer;
+}
+
+.btn-load:hover {
+  background-color: #f7a700;
+}
+
+/* ============================================================= */
+/* INSTAGRAM: titulo, subtitulo y galeria de 5 fotos             */
+/* ============================================================= */
+.instagram {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.instagram-titulo {
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #1c1f24;
+  margin-bottom: 8px;
+}
+
+.instagram-subtitulo {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #999999;
+  margin-bottom: 26px;
+}
+
+/* Galeria a todo el ancho: 5 imagenes en fila */
+.instagram-galeria {
+  display: flex;
+}
+
+.instagram-galeria img {
+  flex: 1;
+  width: 20%;
+  height: 230px;
+  object-fit: cover;
+}
+
+/* ============================================================= */
+/* BENEFICIOS: tres bloques con icono y texto                    */
+/* ============================================================= */
+.beneficios {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 45px 30px;
+}
+
+.beneficio {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.beneficio img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.beneficio-texto h3 {
+  font-size: 14px;
+  color: #1c1f24;
+  margin-bottom: 6px;
+}
+
+.beneficio-texto p {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1.5;
+}
+
+/* ============================================================= */
+/* FOOTER: tres columnas + barra inferior                        */
+/* ============================================================= */
+.footer {
+  background-color: #1c1f24;
+  color: #cccccc;
+}
+
+.footer-contenido {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px;
+}
+
+.footer-col {
+  flex: 1;
+}
+
+/* Logo del footer */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+/* Listas de enlaces */
+.footer-enlaces li {
+  margin-bottom: 8px;
+}
+
+.footer-enlaces a {
+  font-size: 12px;
+  color: #999999;
+}
+
+.footer-enlaces a:hover {
+  color: #f7a700;
+}
+
+.footer-enlaces-fila {
+  margin-top: 20px;
+}
+
+/* Titulos de columna */
+.footer-col h3 {
+  font-size: 15px;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.footer-col p {
+  font-size: 12px;
+  color: #999999;
+  margin-bottom: 10px;
+}
+
+/* Formulario de newsletter */
+.newsletter-form {
+  display: flex;
+  margin-top: 12px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  border: none;
+  padding: 10px 12px;
+  font-size: 12px;
+  outline: none;
+}
+
+.newsletter-form button {
+  background-color: #f7a700;
+  color: #ffffff;
+  border: none;
+  padding: 0 18px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background-color: #e09600;
+}
+
+/* Barra inferior del footer */
+.footer-inferior {
+  border-top: 1px solid #2b2f36;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: #777777;
+}
+
+/* Redes sociales (iconos como imagenes) */
+.footer-redes {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-redes img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* Metodos de pago */
+.footer-pagos {
+  display: flex;
+  gap: 6px;
+}
+
+.footer-pagos span {
+  background-color: #ffffff;
+  color: #1c1f24;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px 6px;
+  border-radius: 3px;
+}
+
+/* ============================================================= */
+/* RESPONSIVE: TABLET (481px - 884px)                            */
+/* ============================================================= */
+@media (min-width: 481px) and (max-width: 884px) {
+
+  /* Header en columna */
+  .header-contenido {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .header-buscador,
+  .header-iconos {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Marcas con salto de linea centrado */
+  .marcas {
+    justify-content: center;
+  }
+
+  /* Productos en 2 columnas */
+  .producto {
+    width: 50%;
+  }
+
+  /* Beneficios en columna */
+  .beneficios {
+    flex-direction: column;
+  }
+
+  /* Footer en dos columnas envolventes */
+  .footer-contenido {
+    flex-wrap: wrap;
+  }
+  .footer-col {
+    flex: 1 1 45%;
+  }
+}
+
+/* ============================================================= */
+/* RESPONSIVE: MOVIL (max-width 480px)                           */
+/* ============================================================= */
+@media (max-width: 480px) {
+
+  /* Header en columna */
+  .header-contenido {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .header-buscador,
+  .header-iconos {
+    width: 100%;
+    justify-content: center;
+  }
+  .nav-principal ul {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  /* Hero apilado verticalmente */
+  .hero {
+    flex-direction: column;
+  }
+
+  /* Marcas centradas */
+  .marcas {
+    justify-content: center;
+  }
+
+  /* Categorias apiladas */
+  .categorias {
+    flex-direction: column;
+  }
+
+  /* Productos en una sola columna */
+  .producto {
+    width: 100%;
+  }
+
+  /* Instagram apilado */
+  .instagram-galeria {
+    flex-wrap: wrap;
+  }
+  .instagram-galeria img {
+    width: 50%;
+    flex: none;
+  }
+
+  /* Beneficios en columna */
+  .beneficios {
+    flex-direction: column;
+  }
+
+  /* Footer en una columna */
+  .footer-contenido {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer-inferior {
+    flex-direction: column;
+    text-align: center;
+  }
+}
