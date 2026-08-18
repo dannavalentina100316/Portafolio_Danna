@@ -1,0 +1,349 @@
+:root {
+    --bg-1: #fff5fb;
+    --bg-2: #fce7f3;
+    --bg-3: #fdf2ff;
+    --primary: #d977a8;
+    --primary-dark: #b85d8c;
+    --primary-soft: #f9d9e8;
+    --accent: #f7c95d;
+    --card: #fffafc;
+    --text: #4f3140;
+    --muted: #86657a;
+    --soft: #f7edf2;
+    --line: #f4dfe8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(217, 119, 168, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            var(--bg-1),
+            var(--bg-2)
+        );
+}
+
+/* =========================
+   TARJETA
+========================= */
+
+.card {
+    width: 420px;
+    max-width: 100%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px rgba(184, 93, 140, 0.18);
+
+    animation: aparecer 0.6s ease;
+    border: 1px solid rgba(217, 119, 168, 0.08);
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.card-header {
+    height: 175px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+}
+
+/* Decoración */
+
+.card-header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    top: -120px;
+    right: -50px;
+}
+
+.card-header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    bottom: -120px;
+    left: -50px;
+}
+
+/* =========================
+   FOTO
+========================= */
+
+.profile {
+    position: absolute;
+
+    width: 145px;
+    height: 145px;
+
+    left: 50%;
+    bottom: -72px;
+
+    transform: translateX(-50%);
+
+    padding: 6px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 10px 30px rgba(184, 93, 140, 0.2);
+
+    z-index: 2;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.card-content {
+    padding: 95px 35px 30px;
+
+    text-align: center;
+}
+
+.label {
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    background: var(--primary-soft);
+
+    color: var(--primary-dark);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+.card-content h1 {
+    color: var(--text);
+
+    font-size: 28px;
+
+    margin-bottom: 7px;
+}
+
+.profession {
+    color: var(--primary-dark);
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+.description {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+/* =========================
+   DATOS
+========================= */
+
+.datos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: left;
+}
+
+.dato {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 12px 14px;
+
+    background: var(--soft);
+
+    border-radius: 13px;
+
+    transition: 0.25s;
+}
+
+.dato:hover {
+    transform: translateX(4px);
+
+    background: #f9e9f2;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+}
+
+.dato small {
+    display: block;
+
+    color: #9b7b88;
+
+    font-size: 11px;
+
+    margin-bottom: 2px;
+}
+
+.dato p {
+    color: var(--text);
+
+    font-size: 13px;
+
+    word-break: break-word;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 16px;
+
+    border-top: 1px solid var(--line);
+
+    text-align: center;
+
+    color: #9e7b88;
+
+    font-size: 11px;
+}
+
+.footer i {
+    margin-right: 5px;
+
+    color: var(--primary-dark);
+}
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .card-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .card-content h1 {
+        font-size: 24px;
+    }
+
+}
